@@ -2,8 +2,8 @@
 by Marius Hanne, Jakob Drzazga, Adrian Kizlauskas, Philip Paetz, Martin Mischke
 
 ### Abstract
-This document describes a smart contract platform built on top of a globally distributed
-computing network such as [Ethereum](https://ethereum.org/) or [Rootstock](http://www.rsk.co).
+This document describes a smart contract platform built on top of the globally distributed
+computing network known as [Ethereum](https://ethereum.org/)z.
 The suggested Proof-of-Asset (PoA) scheme will enable users to seamlessly trade tokens,
 which represent different types of Foreign-Asset on all [ERC20](https://theethereum.wiki/w/index.php/ERC20_Token_Standard) compatible markets.
 
@@ -14,13 +14,10 @@ the value of the token and the foreign asset.
 Users can purchase PoA-Token in exchange for Native-Currency, trade them,
 or hold them and receive a share of any dividends that the asset pays out.
 
-Investors may redeem their PoA tokens, prompting the DTF to liquidate the corresponding foreign assets
-and refund their current market value in native currency.
-
 ### Table of Contents
 * [1. Overview](#1-overview)
-* [2. Brickblock](#2-brickblock)
-  + [2.1. Brickblock Token (BBK)](#21-brickblock-token-bbt)
+* [2. PoA Manager](#2-poa-manager)
+  + [2.1. Brickblock Token (BBK)](#21-brickblock-token-bbk)
   + [2.2. Access Token (ACT)](#22-access-token-act)
   + [2.3. Digital Trust Fund (DTF)](#23-digital-trust-fund-dtf)
   + [2.4. Fees](#24-fees)
@@ -58,21 +55,21 @@ Proof-of-Asset tokens represent a certain foreign asset available to trade on th
 The assets backing those tokens are held by a publicly auditable digital trust fund.
 All these tokens implement the ERC20 specification and are seamlessly tradable on compatible third-party markets.
 
-<img src="https://github.com/brickblock-io/whitepaper-technical/raw/master/img/token-interactions.jpg" width="400" />
+<img src="img/BrickblockEcosystem.png" width="900" />
 
 *Figure 1: The different types of tokens, and how they interact*
 
 
-## 2. Brickblock
-Proof-of-Asset tokens will be created by a smart contract that runs on the
+## 2. PoaManager
+Proof-of-Asset tokens will be created by a smart contract that runs on the Ethereum
 blockchain, which also handles broker registration and manages individual PoA
-contracts.
+contracts. This contract is named PoaManager.
 
 ### 2.1. Brickblock Token (BBK)
-The Brickblock contract itself implements an ERC20-compatible token,
+The PoaManager contract itself implements an ERC20-compatible token,
 which will be distributed to the contributors of our fundraiser.
 
-In addition to being tradable, can be locked in order to generate
+In addition to being tradable, it can be locked in order to generate
 access tokens when a fee is paid.
 
 ### 2.2. Access Token (ACT)
@@ -120,7 +117,7 @@ The PoA Manager contract holds a list of all currently active brokers and
 allows the Brickblock administration to add and remove them.
 
 ## 3. Proof-of-Asset
-<img src="https://github.com/brickblock-io/whitepaper-technical/raw/master/img/proof-of-asset-scheme.jpg" width="400" />
+<img src="img/PoaEcosystem.png" width="700" />
 
 *Figure 2: The Proof-of-Asset Scheme*
 
